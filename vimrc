@@ -28,7 +28,7 @@ set backspace=indent,eol,start
 set nu
 
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-filetype plugin indent
+filetype plugin indent on
 
 inoremap <C-E> <C-N>
 :map  <C-l> :tabn<CR>
