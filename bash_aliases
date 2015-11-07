@@ -15,6 +15,7 @@ alias agu='sudo apt-get update'
 alias agg='sudo apt-get upgrade'
 alias agdg='sudo apt-get dist-upgrade'
 alias agar='sudo apt-get autoremove'
+alias agac='sudo apt-get autoclean'
 alias acs='sudo apt-cache search'
 
 alias lsl='ls -lhFA | less'
