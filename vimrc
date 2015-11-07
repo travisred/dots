@@ -28,7 +28,6 @@ set backspace=indent,eol,start
 set nu
 
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-filetype plugin indent on
 
 inoremap <C-E> <C-N>
 :map  <C-l> :tabn<CR>
@@ -80,3 +79,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+"https://github.com/rht/eigenvimrc
+set laststatus=2
+set incsearch
+set ignorecase
+set ruler
+set splitright
