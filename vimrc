@@ -20,12 +20,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jakobwesthoff/whitespacetrail'
 Plugin 'tpope/vim-eunuch'
+Plugin 'joonty/vdebug.git'
 call vundle#end()
 
 set backup                     " make backups
 set backupdir=/tmp			   " backups go here
 set backspace=indent,eol,start
 set nu
+set colorcolumn=80
+set nowrap
 
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 
