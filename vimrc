@@ -32,6 +32,12 @@ set nowrap
 
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 
+" stop it
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 inoremap <C-E> <C-N>
 :map  <C-l> :tabn<CR>
 :map  <C-h> :tabp<CR>
