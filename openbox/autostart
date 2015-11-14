@@ -1,0 +1,7 @@
+hsetroot -solid "#1a1a1a" &
+sleep 1 && tint2 &
+sleep 1 && xfce4-power-manager &
+sleep 1 && xscreensaver -no-splash &
+sleep 1 && volumeicon &
+sleep 1 && dmenufm_path &
+sleep 1 && clipmenud &
