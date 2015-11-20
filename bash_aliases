@@ -49,3 +49,5 @@ trsleepy() {
 	sudo pm-suspend;
 }
 
+alias sublime='bin/sublime/sublime_text'
+

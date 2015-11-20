@@ -32,7 +32,7 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>EasyGray</name>
+    <name>Natura</name>
     <titleLayout>DSLIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -250,7 +250,7 @@
     </keybind>
     <keybind key="W-S-5">
       <action name="Execute">
-        <execute>trpic</execute>
+        <execute>/home/treddell/bin/trpic</execute>
       </action>
     </keybind>
     <keybind key="W-S-6">
@@ -469,7 +469,7 @@
     <keybind key="F8">
       <action name="Execute">
         <name>clipmenu</name>
-        <command>clipmenu</command>
+        <command>~/bin/clipmenu</command>
       </action>
     </keybind>
     <!-- A bit of tiling 
