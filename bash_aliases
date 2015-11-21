@@ -5,6 +5,7 @@ alias gpr='git pull --rebase'
 alias gd='git diff'
 alias ga='git add'
 alias gco='git checkout'
+alias trcleangit='git checkout .; git pull; git submodule init && git submodule sync && git submodule update; ./composer.phar update; ./cake Migrations.migration run all'
 
 alias bellme="while true; do printf '\a'; sleep 1; done"
 alias gr='grep -inr'
@@ -26,14 +27,8 @@ alias mkdir="mkdir -pv"
 alias myip="curl http://ipecho.net/plain; echo"
 alias webify="mogrify -resize 800\> *.jpg"
 
-alias trmail='cd; mutt -F ~/.muttconfs/trtreddell; cd -;'
-alias ahmmail='cd; mutt -F ~/.muttconfs/ahm; cd -;'
-alias psmail='cd; mutt -F ~/.muttconfs/ps; cd -;'
-
 alias exmon='xrandr --output DP2 --mode 1920x1080; sleep 2; xrandr --output eDP1 --off'
 alias lapmon='xrandr --output eDP1 --mode 1920x1080; sleep 2; xrandr --output DP2 --off'
-
-alias trash='gvfs-trash'
 
 running() {
     ps -Alf | grep -v grep | grep $1
