@@ -25,7 +25,7 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=20000
 
-PROMPT_COMMAND="[ -d $HOME/.history ] || mkdir -p $HOME/.history; echo : [\$(date)] $$ $USER \$OLDPWD\; \$(history 1 | sed -E 's/^[[:space:]]+[0-9]*[[:space:]]+//g') >> $HOME/.history/bash_history-pi-\`date +%Y%m%d\`"
+PROMPT_COMMAND="[ -d $HOME/.history ] || mkdir -p $HOME/.history; echo : [\$(date)] $$ $USER \$OLDPWD\; \$(history 1 | sed -E 's/^[[:space:]]+[0-9]*[[:space:]]+//g') >> $HOME/.history/bash_history-\`date +%Y%m%d\`"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
