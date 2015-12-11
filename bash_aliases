@@ -26,6 +26,8 @@ alias webify="mogrify -resize 800\> *.jpg"
 alias exmon='xrandr --output DP2 --mode 1920x1080; sleep 2; xrandr --output eDP1 --off'
 alias lapmon='xrandr --output eDP1 --mode 1920x1080; sleep 2; xrandr --output DP2 --off'
 
+alias trmail='mutt -F ~/muttconfs/travisr'
+
 running() {
     ps -Alf | grep -v grep | grep $1
 }
