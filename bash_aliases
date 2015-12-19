@@ -26,6 +26,8 @@ alias exmon='xrandr --output DP2 --mode 1920x1080; sleep 2; xrandr --output eDP1
 alias lapmon='xrandr --output eDP1 --mode 1920x1080; sleep 2; xrandr --output DP2 --off'
 
 alias trmail='mutt -F ~/muttconfs/travisr'
+alias ahmmail='mutt -F ~/muttconfs/ahm'
+
 alias sublime='~/bin/sublime/sublime_text'
 
 running() {
