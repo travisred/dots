@@ -18,7 +18,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jakobwesthoff/whitespacetrail'
 Plugin 'tpope/vim-eunuch'
-Plugin 'joonty/vdebug.git'
+"Plugin 'joonty/vdebug.git'
 call vundle#end()
 
 set backup                     " make backups
