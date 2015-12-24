@@ -250,7 +250,7 @@
     </keybind>
     <keybind key="W-S-5">
       <action name="Execute">
-        <execute>/home/treddell/bin/trpic</execute>
+        <execute>/home/treddell/.bin/trpic</execute>
       </action>
     </keybind>
     <keybind key="W-S-6">
@@ -319,7 +319,7 @@
           <enabled>true</enabled>
           <name>dmenufm</name>
         </startupnotify>
-        <command>~/bin/dmenufm</command>
+        <command>~/.bin/dmenufm</command>
       </action>
     </keybind>
     <keybind key="W-S-3">
@@ -373,7 +373,7 @@
           <enabled>true</enabled>
           <name>Lock screen</name>
         </startupnotify>
-        <command>~/bin/trlock</command>
+        <command>~/.bin/trlock</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -391,7 +391,7 @@
           <enabled>true</enabled>
           <name>sleep now</name>
         </startupnotify>
-        <command>gksudo ~/bin/trsleepy</command>
+        <command>gksudo ~/.bin/trsleepy</command>
       </action>
     </keybind>
     <keybind key="W-q">
@@ -469,7 +469,7 @@
     <keybind key="F8">
       <action name="Execute">
         <name>clipmenu</name>
-        <command>~/bin/clipmenu</command>
+        <command>~/.bin/clipmenu</command>
       </action>
     </keybind>
     <!-- A bit of tiling 
