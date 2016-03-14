@@ -7,6 +7,7 @@ alias ga='git add'
 alias gco='git checkout'
 alias trcleangit='git checkout .; git pull; git submodule init && git submodule sync && git submodule update; ./composer.phar update; ./cake Migrations.migration run all'
 
+alias gr='grep -inr'
 
 alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
@@ -45,8 +46,9 @@ trsleepy() {
 }
 
 grr() {
-	grep -inr $1 Model;
-	grep -inr $1 View;
-	grep -inr $1 Controller;
+	grep -inr "$1" Model;
+	grep -inr "$1" View;
+	grep -inr "$1" Controller;
+	grep -inr "$1" Plugin;
 }
 
