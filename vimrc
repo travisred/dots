@@ -25,9 +25,9 @@ set backup                     " make backups
 set backupdir=/tmp			   " backups go here
 set backspace=indent,eol,start
 set nu
-
+set columns=80
+set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-
 inoremap <C-E> <C-N>
 :map  <C-l> :tabn<CR>
 :map  <C-h> :tabp<CR>

@@ -22,6 +22,11 @@ alias lsl='ls -lhFA | less'
 alias ..='cd ..'
 alias mkdir="mkdir -pv"
 alias webify="mogrify -resize 800\> *.jpg"
+alias trtime='date +%r\ \|\|\ %a-%h-%m-%d-%Y'
+alias 1='cd ../'
+alias 2='cd ../../'
+alias 3='cd ../../../'
+alias _=sudo
 
 alias exmon='xrandr --output DP2 --mode 1920x1080; sleep 2; xrandr --output eDP1 --off'
 alias lapmon='xrandr --output eDP1 --mode 1920x1080; sleep 2; xrandr --output DP2 --off'
