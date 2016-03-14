@@ -1,9 +1,9 @@
 #! /bin/bash 
 
 d=`date +%Y%m%d%I%M%S`
-host="a.magnatecha.com"
+host="magnatecha.com"
 screencapture -i $d.png; 
 open $d.png #edit?
 read go;
-rsync $d.png $host:~/sites/$host/; echo "http://$host/$d.png" | pbcopy
+rsync $d.png $host:~/sites/$host/_media/; echo "http://$host/_media/$d.png" | pbcopy
 mv $d.png ~/Downloads
