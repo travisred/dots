@@ -1,0 +1,6 @@
+browser open
+save-path ~/Documents/read
+
+always-display-description true
+download-full-page yes
+refresh-on-startup yes
