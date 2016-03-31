@@ -1,4 +1,6 @@
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/vundle'
@@ -18,6 +20,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jakobwesthoff/whitespacetrail'
 Plugin 'tpope/vim-eunuch'
+Plugin 'xolox/vim-misc'
 "Plugin 'joonty/vdebug.git'
 call vundle#end()
 
@@ -34,8 +37,7 @@ inoremap <C-E> <C-N>
 map :W :w
 map :Q :q
 
-filetype off                   " required!
-syntax enable
+syntax on
 set background=dark
 
 filetype plugin indent on     " required! 
@@ -72,4 +74,3 @@ set incsearch
 set ignorecase
 set ruler
 set splitright
-
