@@ -23,10 +23,11 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'xolox/vim-misc'
 "Plugin 'joonty/vdebug.git'
 call vundle#end()
-
+let g:syntastic_php_checkers = ['php']
 set backup                     " make backups
 set backupdir=/tmp			   " backups go here
-set backspace=indent,eol,start
+set bs=indent,eol,start
+
 set nu
 set columns=80
 set cursorline             " Find the current line quickly.
@@ -74,3 +75,24 @@ set incsearch
 set ignorecase
 set ruler
 set splitright
+" Don't wake up system with blinking cursor:
+" http://www.linuxpowertop.org/known.php
+let &guicursor = &guicursor . ",a:blinkon0"
+
+" fugitive git bindings
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>ge :Gedit<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gw :Gwrite<CR><CR>
+nnoremap <space>gb :Gblame<CR><CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gm :Gmove<Space>
+nnoremap <space>gB :Git branch<Space>
+nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gpl :Dispatch! git pull<CR>
