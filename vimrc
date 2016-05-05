@@ -7,6 +7,7 @@ Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
@@ -14,14 +15,12 @@ Plugin 'tpope/vim-commentary'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
-Plugin 'Shougo/neocomplete'
-Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jakobwesthoff/whitespacetrail'
 Plugin 'tpope/vim-eunuch'
 Plugin 'xolox/vim-misc'
-"Plugin 'joonty/vdebug.git'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 let g:syntastic_php_checkers = ['php']
 set backup                     " make backups
@@ -39,7 +38,7 @@ map :W :w
 map :Q :q
 
 syntax on
-set background=dark
+colorscheme luna
 
 filetype plugin indent on     " required! 
 let mapleader=","
@@ -96,3 +95,4 @@ nnoremap <space>gB :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
