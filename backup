@@ -1,16 +1,17 @@
 #! /bin/bash
 
-for folder in Documents shows video sites photos Videos
+for folder in Documents photos Videos sites Music
 do
 	rsync \
 		-rbl \
+		--bwlimit 1000 \
 		--size-only \
 		--progress \
 		--delete \
 		--delete-excluded \
-		--backup-dir=/Volumes/treddell/"$folder"_old/ \
+		--backup-dir=/mnt/drive/"$folder"_old/ \
 		--suffix=_`date +%Y_%m_%d_%H%M%S` \
 		--exclude='.*' \
-	~/$folder/ /Volumes/treddell/$folder/;
+	~/$folder/ pi:/mnt/drive/$folder/;
 done
 exit
