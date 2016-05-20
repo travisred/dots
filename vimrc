@@ -38,7 +38,6 @@ map :W :w
 map :Q :q
 
 syntax on
-colorscheme luna
 
 filetype plugin indent on     " required! 
 let mapleader=","
@@ -96,3 +95,10 @@ nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
 
+"http://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
+set number
+set relativenumber
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+set cm=blowfish
