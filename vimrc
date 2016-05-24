@@ -23,7 +23,7 @@ set bs=indent,eol,start
 set nu
 set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-colorscheme ron
+colorscheme murphy
 inoremap <C-E> <C-N>
 :map  <C-l> :tabn<CR>
 :map  <C-h> :tabp<CR>
