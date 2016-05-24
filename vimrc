@@ -3,24 +3,17 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'gregsexton/gitv'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'jakobwesthoff/whitespacetrail'
-Plugin 'tpope/vim-eunuch'
-Plugin 'xolox/vim-misc'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'gmarik/vundle'
+Plugin 'gregsexton/gitv'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sensible'
 call vundle#end()
 let g:syntastic_php_checkers = ['php']
 set backup                     " make backups
@@ -28,14 +21,12 @@ set backupdir=/tmp			   " backups go here
 set bs=indent,eol,start
 
 set nu
-set columns=80
 set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+colorscheme ron
 inoremap <C-E> <C-N>
 :map  <C-l> :tabn<CR>
 :map  <C-h> :tabp<CR>
-map :W :w
-map :Q :q
 
 syntax on
 
