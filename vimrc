@@ -6,12 +6,9 @@ call vundle#begin()
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/vundle'
-Plugin 'gregsexton/gitv'
-Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary' " 8gcc - comment out 8 lines including current line
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 call vundle#end()
@@ -69,22 +66,22 @@ set splitright
 let &guicursor = &guicursor . ",a:blinkon0"
 
 " fugitive git bindings
-nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gw :Gwrite<CR><CR>
-nnoremap <space>gb :Gblame<CR><CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gp :Ggrep<Space>
-nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gB :Git branch<Space>
-nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gps :Dispatch! git push<CR>
-nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gt :Gcommit -v -q %:p<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR><CR>
+nnoremap <leader>gb :Gblame<CR><CR>
+nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gp :Ggrep<Space>
+nnoremap <leader>gm :Gmove<Space>
+nnoremap <leader>gB :Git branch<Space>
+nnoremap <leader>go :Git checkout<Space>
+nnoremap <leader>gps :Dispatch! git push<CR>
+nnoremap <leader>gpl :Dispatch! git pull<CR>
 
 "http://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
 set number
