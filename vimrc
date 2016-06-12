@@ -3,7 +3,8 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'ajh17/VimCompletesMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
