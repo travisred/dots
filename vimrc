@@ -15,12 +15,14 @@ filetype off
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on     " required! 
 syntax on
@@ -58,6 +60,9 @@ nmap  <C-h> :tabp<CR>
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
+nmap <leader>1 :NERDTreeToggle<cr>
+nmap <leader>f :tag<space>
+
 "-------------Auto-Commands--------------"
 
 "Automatically source the Vimrc file on save.
@@ -65,3 +70,8 @@ augroup autosourcing
 		autocmd!
 		autocmd BufWritePost .vimrc source %
 augroup END
+
+" c-] - go to def
+" :ts show all tags for search
+" c-^ to go back
+" zz center view on line

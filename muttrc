@@ -73,6 +73,10 @@ bind attach <return> view-mailcap
 folder-hook . 'macro index d "<save-message>=trash<enter>"' 
 folder-hook =trash 'macro index d <delete-message>'
 
+# View html
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
+
 # nice commands
 # cap T then ~d 01/01/2012-31/12/2012
 # delete dupes -> ~=
