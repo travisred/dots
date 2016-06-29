@@ -5,10 +5,8 @@ set backup                     " make backups
 set backupdir=/tmp			   " backups go here
 set bs=indent,eol,start
 set number
-set relativenumber
 set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-set mouse=a
 set hlsearch
 set incsearch
 filetype off
@@ -23,6 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
 call vundle#end()
 filetype plugin indent on     " required! 
 syntax on
@@ -49,6 +48,9 @@ inoremap <c-s> <c-o>:Update<CR>
 "Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabe $MYVIMRC<cr>
 
+"Some gittiness
+nmap <Leader>gb :Gblame<cr>
+
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
@@ -63,7 +65,16 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nmap <leader>1 :NERDTreeToggle<cr>
 nmap <leader>f :tag<space>
 
+"-------------Visual---------------------"
+hi LineNr ctermbg=bg
+set foldcolumn=2
+hi foldcolumn ctermbg=bg
+hi vertsplit ctermbg=bg ctermfg=bg
+
 "-------------Auto-Commands--------------"
+
+"Automatically remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
 
 "Automatically source the Vimrc file on save.
 augroup autosourcing
