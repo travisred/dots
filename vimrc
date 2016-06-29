@@ -9,6 +9,7 @@ set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 set hlsearch
 set incsearch
+
 filetype off
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,23 +28,10 @@ call vundle#end()
 filetype plugin indent on     " required!
 syntax on
 
-let mapleader=","
+let mapleader="\<Space>"
 let g:syntastic_php_checkers = ['php']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_clear_cache_on_exit = 0
-
-" If the current buffer has never been saved, it will have no name,
-" call the file browser to save it, otherwise just save it.
-command! -nargs=0 -bar Update if &modified
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
-
-nnoremap <silent> <C-S> :<C-u>Update<CR>
-inoremap <c-s> <c-o>:Update<CR>
 
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
@@ -53,21 +41,32 @@ nmap <Leader>ev :tabe $MYVIMRC<cr>
 nmap <Leader>gb :Gblame<cr>
 
 "Add simple highlight removal.
-nmap <Leader><space> :nohlsearch<cr>
+nmap <Leader>h :nohlsearch<cr>
 
 "Ctrl+[l,h] to move to tab left or right of here
-nmap  <C-l> :tabn<CR>
-nmap  <C-h> :tabp<CR>
+nmap  <C-l> :tabn<cr>
+nmap  <C-h> :tabp<cr>
+
+"Tab movement with CTRL
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
 
 " Make sure [j,k] brings us to expected line
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-nmap <leader>1 :NERDTreeToggle<cr>
+nmap <leader>n :NERDTreeToggle<cr>
 nmap <leader>f :tag<space>
 
 "Remove bad whitespace
 nmap <leader>bw :EraseBadWhitespace<cr>
+
+"Save file
+nnoremap <Leader>w :w<CR>
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
