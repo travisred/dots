@@ -41,8 +41,12 @@ running() {
     ps -Alf | grep -v grep | grep $1
 }
 
-trstartvm() {
+vmstart() {
 	VBoxManage startvm $1 --type headless
+}
+
+vmstop() {
+	VBoxManage controlvm $1 acpipowerbutton
 }
 
 trsleepy() {
