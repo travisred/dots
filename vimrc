@@ -22,8 +22,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
+Plugin 'bitc/vim-bad-whitespace'
 call vundle#end()
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 syntax on
 
 let mapleader=","
@@ -33,7 +34,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
-command! -nargs=0 -bar Update if &modified 
+command! -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
@@ -65,6 +66,9 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nmap <leader>1 :NERDTreeToggle<cr>
 nmap <leader>f :tag<space>
 
+"Remove bad whitespace
+nmap <leader>bw :EraseBadWhitespace<cr>
+
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
 set foldcolumn=2
@@ -74,7 +78,7 @@ hi vertsplit ctermbg=bg ctermfg=bg
 "-------------Auto-Commands--------------"
 
 "Automatically remove trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\s\+$//e
 
 "Automatically source the Vimrc file on save.
 augroup autosourcing
