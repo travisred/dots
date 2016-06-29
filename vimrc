@@ -68,6 +68,7 @@ nmap <leader>bw :EraseBadWhitespace<cr>
 
 "Save file
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
