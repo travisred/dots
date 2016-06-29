@@ -28,7 +28,8 @@ call vundle#end()
 filetype plugin indent on     " required!
 syntax on
 
-let mapleader="\<Space>"
+"let mapleader="\<Space>"
+map <Space> <leader>
 let g:syntastic_php_checkers = ['php']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_clear_cache_on_exit = 0
@@ -89,3 +90,8 @@ augroup END
 " :ts show all tags for search
 " c-^ to go back
 " zz center view on line
+" Sessions
+" :mks ~/.vim/sessions/rooster.vim
+" :source ~/.vim/sessions/rooster.vim
+" or
+" vim -S ~/.vim/sessions/rooster.vim
