@@ -69,7 +69,7 @@ nmap <leader>f :tag<space>
 nmap <leader>bw :EraseBadWhitespace<cr>
 
 "Save file
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
 
 "-------------Visual---------------------"
