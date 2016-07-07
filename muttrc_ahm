@@ -7,6 +7,9 @@ set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set duplicate_threads = yes
+set smtp_url="smtps://travis.reddell@alliedhealthmedia.com@smtp.gmail.com:465/"
+set from="travis.reddell@alliedhealthmedia.com"
+set smtp_authenticators = 'gssapi:login'
 
 # use very high $read_inc to speed up reading hcache'd maildirs
 folder-hook . 'set read_inc=1000'

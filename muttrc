@@ -7,6 +7,8 @@ set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set duplicate_threads = yes
+set smtp_url="smtp://travisr@fastmail.com@mail.messagingengine.com:587/"
+set from="travisr@fastmail.com"
 
 # use very high $read_inc to speed up reading hcache'd maildirs
 folder-hook . 'set read_inc=1000'
@@ -52,6 +54,9 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 # Archive tagged
 macro index S ":set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>~/Documents/archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 
+# Get links with w3m
+#macro index,pager \cB ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs
+
 # Get new mail
 macro index o "<shell-escape>getmail -r gmail<enter>"
 
@@ -70,7 +75,7 @@ bind pager R  group-reply
 bind attach <return> view-mailcap
 
 # poor man's trash
-folder-hook . 'macro index d "<save-message>=trash<enter>"' 
+folder-hook . 'macro index d "<save-message>=trash<enter>"'
 folder-hook =trash 'macro index d <delete-message>'
 
 # View html
