@@ -2,6 +2,7 @@
 
 set folder = ~/mail
 set spoolfile = ~/mail
+source ~/.mutt_personal
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d/%Y %I:%M%p"
@@ -51,12 +52,12 @@ bind pager R  group-reply
 # View attachments properly.
 bind attach <return> view-mailcap
 
-macro pager H "v/html<enter>mq" "view message in browser (from pager)"
+macro pager o "v/html<enter>mq" "view message in browser (from pager)"
 macro pager w "<enter-command>set invsmart_wrap invmarkers<enter>" "semove linewrap stuff"
 
 macro index .cp '<enter-command>source ~/.mutt_personal<enter><change-folder>=<enter>' "switch to personal email"
 macro index .cw '<enter-command>source ~/.mutt_work<enter><change-folder>=<enter>' "switch to work email"
-macro index H "<enter>v/html<enter>mqq" "view message in browser (from index)"
+macro index o "<enter>v/html<enter>mqq" "view message in browser (from index)"
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # poor man's trash
