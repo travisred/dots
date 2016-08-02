@@ -1,6 +1,6 @@
 #! /bin/bash
 
-for folder in Documents photos Videos sites Music Dropbox dots Camera video
+for folder in Documents photos Videos sites Music Dropbox dots DCIM video
 do
 	rsync \
 		-rbl \
