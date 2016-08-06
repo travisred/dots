@@ -1,3 +1,9 @@
+## Common Settings ##
+
+set folder = ~/mail
+set spoolfile = ~/mail
+source ~/.mutt_personal
+
 # Index View Options ---------------------------------
 set date_format = "%m/%d/%Y %I:%M%p"
 set index_format="%?M?+& ?%2M %2e %Z %D %-20.20F (%4c) %s"
@@ -7,17 +13,8 @@ set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set duplicate_threads = yes
-
-# use very high $read_inc to speed up reading hcache'd maildirs
-folder-hook . 'set read_inc=1000'
-
-set header_cache     = ~/.mutt/cache/headers # where to store headers
-set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
-set certificate_file = ~/.mutt/certificates  # where to store certs
-set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
-set signature        = ~/.mutt/sig           # my signature file
+set mailcap_path = ~/.mutt/mailcap
 set editor = "vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
-#set editor = "sublime -w"
 
 # Basic Options --------------------------------------
 set query_command = "~/bin/search_contacts '%s'"
@@ -42,21 +39,7 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 bind index gg       first-entry
 bind index G        last-entry
 
-# Ctrl-R to mark all as read
-macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-
-# Saner copy/move dialogs
-macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-
-# Archive tagged
-macro index S ":set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>~/Documents/archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
-
-# Get new mail
-macro index o "<shell-escape>getmail -r gmail<enter>"
-
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/plain text/enriched text/html
 
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
@@ -69,13 +52,17 @@ bind pager R  group-reply
 # View attachments properly.
 bind attach <return> view-mailcap
 
-# poor man's trash
-folder-hook . 'macro index d "<save-message>=trash<enter>"' 
-folder-hook =trash 'macro index d <delete-message>'
+macro pager o "v/html<enter>mq" "view message in browser (from pager)"
+macro pager w "<enter-command>set invsmart_wrap invmarkers<enter>" "semove linewrap stuff"
 
-# View html
-auto_view text/html                                      # view html automatically
-alternative_order text/plain text/enriched text/html     # save html for last
+macro index .cp '<enter-command>source ~/.mutt_personal<enter><change-folder>=<enter>' "switch to personal email"
+macro index .cw '<enter-command>source ~/.mutt_work<enter><change-folder>=<enter>' "switch to work email"
+macro index o "<enter>v/html<enter>mqq" "view message in browser (from index)"
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# poor man's trash
+folder-hook . 'macro index d "<save-message>=trash<enter>"'
+folder-hook =trash 'macro index d <delete-message>'
 
 # nice commands
 # cap T then ~d 01/01/2012-31/12/2012

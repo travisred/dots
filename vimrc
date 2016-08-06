@@ -1,4 +1,4 @@
-set  t_Co=256
+set t_Co=256
 colorscheme atom-dark-256
 set nocompatible
 set backspace=indent,eol,start
@@ -10,7 +10,7 @@ set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 set hlsearch
 set incsearch
-set ignorecase
+set smartcase
 
 filetype off
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -35,6 +35,8 @@ map <Space> <leader>
 let g:syntastic_php_checkers = ['php']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_working_path_mode = 'r'
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -43,6 +45,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabe $MYVIMRC<cr>

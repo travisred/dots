@@ -1,0 +1,14 @@
+## Personal Email ##
+
+unset folder
+set folder = ~/mail
+set record = ~/mail/
+set smtp_url="smtp://travisr@fastmail.com@smtp.fastmail.com:587/"
+set from="travisr@fastmail.com"
+
+macro index S ":set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>~/Documents/email/mail/archives/`date +%Y`\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive tagged emails"
+
+macro index R "<shell-escape>getmail -dr gmail<enter>" "Get new email"
+
+macro index "\ea" "<change-folder>=archives/<tab><tab>" "Show Archives"
+
