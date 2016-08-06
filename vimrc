@@ -35,7 +35,14 @@ map <Space> <leader>
 let g:syntastic_php_checkers = ['php']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_clear_cache_on_exit = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabe $MYVIMRC<cr>
@@ -67,6 +74,7 @@ nmap <leader>f :tag<space>
 
 "Remove bad whitespace
 nmap <leader>bw :EraseBadWhitespace<cr>
+nmap <leader>cs :SyntasticCheck --standard=PSR2 --colors --exclude=Generic.WhiteSpace.DisallowTabIndent -n phpcs<cr>
 
 "Save file
 nnoremap <Leader>s :w<CR>

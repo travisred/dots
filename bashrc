@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 # We use preexec and precmd hook functions for Bash
-# If you have anything that's using the Debug Trap or PROMPT_COMMAND 
+# If you have anything that's using the Debug Trap or PROMPT_COMMAND
 # change it to use preexec or precmd
 # See also https://github.com/rcaloras/bash-preexec
 
@@ -18,12 +18,10 @@ HISTCONTROL=ignoreboth
 
 PATH=/home/treddell/.bin:$PATH
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 PROMPT_COMMAND="[ -d $HOME/.history ] || mkdir -p $HOME/.history; echo : [\$(date)] $$ $USER \$OLDPWD\; \$(history 1 | sed -E 's/^[[:space:]]+[0-9]*[[:space:]]+//g') >> $HOME/.history/bash_history-\`date +%Y%m%d\`"
 

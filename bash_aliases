@@ -6,6 +6,8 @@ alias gpr='git pull --rebase'
 alias gd='git diff'
 alias ga='git add'
 alias gco='git checkout'
+alias gm='git merge --no-edit'
+
 alias trcleangit='git checkout .; git pull; git submodule init && git submodule sync && git submodule update; ./composer.phar update; ./cake Migrations.migration run all'
 
 alias gr='grep -inr'
@@ -59,6 +61,5 @@ grr() {
 	grep -inr "$1" Model;
 	grep -inr "$1" View;
 	grep -inr "$1" Controller;
-	grep -inr "$1" Plugin;
 }
 
