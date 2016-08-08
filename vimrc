@@ -10,7 +10,7 @@ set cursorline             " Find the current line quickly.
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 set hlsearch
 set incsearch
-set ignorecase
+set smartcase
 
 filetype off
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
