@@ -7,7 +7,7 @@ set smtp_url="smtps://travis.reddell@alliedhealthmedia.com@smtp.gmail.com:465/"
 set from="travis.reddell@alliedhealthmedia.com"
 set smtp_authenticators = 'gssapi:login'
 
-macro index S ":set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>~/Documents/email/mail/work_archives/ahm_`date +%Y`\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive tagged emails"
+macro index S "<tag-prefix-cond><save-message>~/Documents/work_archives/ahm_2016\n<sync-mailbox>"
 
 macro index R "<shell-escape>getmail -r ahm<enter>" "Get new email"
 

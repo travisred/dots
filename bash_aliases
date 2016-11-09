@@ -60,3 +60,4 @@ grr() {
 	grep -inr "$1" Controller;
 }
 
+alias slowcurl='curl --limit-rate 200k'

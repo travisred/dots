@@ -8,9 +8,7 @@ do
 		--progress \
 		--delete \
 		--delete-excluded \
-		--backup-dir=/Volumes/1tb/"$folder"_old/ \
-		--suffix=_`date +%Y_%m_%d_%H%M%S` \
 		--exclude='.*' \
-	~/$folder/ /Volumes/1tb/$folder/;
+	/Volumes/1tb/$folder/ 192.168.2.12:/mnt/drive/$folder/
 done
 exit
