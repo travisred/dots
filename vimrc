@@ -7,7 +7,7 @@ set backupdir=/tmp			   " backups go here
 set bs=indent,eol,start
 set number
 set cursorline             " Find the current line quickly.
-set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+set tabstop=4 shiftwidth=4 expandtab
 set hlsearch
 set incsearch
 set smartcase
@@ -24,6 +24,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-sleuth'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'bitc/vim-bad-whitespace'
@@ -78,7 +79,7 @@ nmap <leader>f :tag<space>
 
 "Remove bad whitespace
 nmap <leader>bw :EraseBadWhitespace<cr>
-nmap <leader>cs :SyntasticCheck --standard=PSR2 --colors --exclude=Generic.WhiteSpace.DisallowTabIndent -n phpcs<cr>
+nmap <leader>fm :SyntasticCheck --standard=PSR2 --colors -n phpcs<cr>
 
 "Save file
 nnoremap <Leader>s :w<CR>
