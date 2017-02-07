@@ -5,7 +5,7 @@ set folder = ~/mail
 set record = ~/mail/
 
 macro index S "<tag-prefix-cond><save-message>~/Documents/archives/2016\n<sync-mailbox>"
-macro index R "<shell-escape>getmail -r mt<enter>" "Get new email"
+macro index R "<shell-escape>getmail -d -r fastmail<enter>" "Get new email"
 
 macro index "\ea" "<change-folder>=archives/<tab><tab>" "Show Archives"
 

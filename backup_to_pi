@@ -1,6 +1,6 @@
 #! /bin/bash
 
-for folder in Documents photos Videos sites Music Dropbox dots DCIM
+for folder in Documents sites Dropbox dots
 do
 	rsync \
 		-rbl \
@@ -9,6 +9,6 @@ do
 		--delete \
 		--delete-excluded \
 		--exclude='.*' \
-	/Volumes/1tb/$folder/ 192.168.2.12:/mnt/drive/$folder/
+	~/$folder/ pi:/mnt/drive/$folder/
 done
 exit

@@ -85,6 +85,9 @@ nmap <leader>fm :SyntasticCheck --standard=PSR2 --colors -n phpcs<cr>
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
 
+"Sum a
+nnoremap <Leader>at :%!awk '{print; total+=$3} END {print total}'<CR>
+
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
 set foldcolumn=2
@@ -111,3 +114,11 @@ augroup END
 " :source ~/.vim/sessions/rooster.vim
 " or
 " vim -S ~/.vim/sessions/rooster.vim
+"
+
+" fuel mileage calculate cost total
+nnoremap <Leader>ft ^ :%!awk '{ print $3 * $4;}'<CR>v$hyu
+" fuel mileage calculate record
+nnoremap <Leader>fc ^ :%!awk '{ print $2 / $3;}'<CR>v$hyu
+" fuel mileage total average
+nnoremap <Leader>fa :%!awk '{ sum += $6; n++ } END { if (n > 0) print sum / n;}'<CR>v$yu
