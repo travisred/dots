@@ -469,10 +469,10 @@
     <keybind key="F9">
       <action name="Execute">
         <name>clipmenu</name>
-        <command>~/.bin/clipmenu</command>
+        <command>clipmenu</command>
       </action>
     </keybind>
-    <!-- A bit of tiling 
+    <!-- A bit of tiling
         <keybind key="W-Right">
       <action name="GrowToEdgeEast"/>
     </keybind>
@@ -837,7 +837,7 @@
     <!-- You can specify more than one menu file in here and they are all loaded,
        just don't make menu ids clash or, well, it'll be kind of pointless -->
     <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
-    <!-- system menu files on Debian systems 
+    <!-- system menu files on Debian systems
     <file>/var/lib/openbox/debian-menu.xml</file>
     <file>debian-menu.xml</file> -->
     <file>menu.xml</file>
@@ -866,7 +866,7 @@
   # order that they appear in this list
 
 
-    # each element can be left out or set to 'default' to specify to not 
+    # each element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>

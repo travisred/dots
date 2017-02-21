@@ -16,8 +16,6 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-PATH=/home/treddell/.bin:$PATH
-
 HISTSIZE=10000
 HISTFILESIZE=20000
 shopt -s histappend
