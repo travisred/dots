@@ -7,9 +7,11 @@ set smtp_url="smtps://travis.reddell@alliedhealthmedia.com@smtp.gmail.com:465/"
 set from="travis.reddell@alliedhealthmedia.com"
 set smtp_authenticators = 'gssapi:login'
 
-macro index S "<tag-prefix-cond><save-message>~/Documents/work_archives/ahm_2016\n<sync-mailbox>"
+macro index S "<tag-prefix-cond><save-message>~/Documents/work_archives/ahm_2017\n<sync-mailbox>"
 
 macro index R "<shell-escape>getmail -r ahm<enter>" "Get new email"
+
+macro index .fg '<tag-pattern>~f ci<enter><tag-pattern>~f loggly<enter><tag-pattern>~f relic<enter>' "clean up noise"
 
 macro index "\ea" "<change-folder>=work_archives/ahm_<tab><tab>" "Show Archives"
 
