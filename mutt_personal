@@ -2,7 +2,7 @@
 
 unset folder
 set folder = ~/mail
-set record = ~/mail/
+set record = ~/mail
 
 macro index S "<tag-prefix-cond><save-message>~/Documents/archives/2017\n<sync-mailbox>"
 macro index R "<shell-escape>getmail -r fastmail<enter>" "Get new email"
