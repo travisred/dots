@@ -1,16 +1,18 @@
-set t_Co=256
 colorscheme atom-dark-256
-set nocompatible
 set backspace=indent,eol,start
 set backup                     " make backups
 set backupdir=/tmp			   " backups go here
 set bs=indent,eol,start
-set number
 set cursorline             " Find the current line quickly.
-set tabstop=4 shiftwidth=4 expandtab
 set hlsearch
 set incsearch
+set lazyredraw
+set nocompatible
+set number
 set smartcase
+set t_Co=256
+set tabstop=4 shiftwidth=4 expandtab
+set wildmenu
 
 filetype off
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -24,7 +26,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-sleuth'
+Plugin 'ciaranm/detectindent'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'bitc/vim-bad-whitespace'
@@ -85,8 +87,11 @@ nmap <leader>fm :SyntasticCheck --standard=PSR2 --colors -n phpcs<cr>
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
 
-"Sum a
-nnoremap <Leader>at :%!awk '{print; total+=$3} END {print total}'<CR>
+"highlight last inserted text
+nnoremap gV `[v`]
+
+" open ag.vim
+nnoremap <leader>a :Ag
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
