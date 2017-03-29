@@ -7,6 +7,8 @@ set cursorline             " Find the current line quickly.
 set hlsearch
 set incsearch
 set lazyredraw
+set list
+set listchars=tab:>-
 set nocompatible
 set number
 set smartcase
@@ -20,21 +22,26 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
-Plugin 'ajh17/VimCompletesMe'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'ervandew/supertab'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'ciaranm/detectindent'
-Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'bitc/vim-bad-whitespace'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on     " required!
 syntax on
 
-"let mapleader="\<Space>"
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+set completeopt=longest,menuone
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
 map <Space> <leader>
 let g:syntastic_php_checkers = ['php']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
@@ -49,6 +56,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+let g:tagbar_show_visibility = 1
+let g:tagbar_show_linenumbers = 1
 
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
@@ -86,12 +97,16 @@ nmap <leader>fm :SyntasticCheck --standard=PSR2 --colors -n phpcs<cr>
 "Save file
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>qa :qa<CR>
 
 "highlight last inserted text
 nnoremap gV `[v`]
 
 " open ag.vim
 nnoremap <leader>a :Ag
+
+" open Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
