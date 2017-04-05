@@ -34,6 +34,7 @@ Plugin 'ciaranm/detectindent'
 Plugin 'rking/ag.vim'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'majutsushi/tagbar'
+Plugin 'joonty/vim-phpqa'
 call vundle#end()
 filetype plugin indent on     " required!
 syntax on
@@ -60,6 +61,10 @@ let g:syntastic_check_on_wq = 0
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 let g:tagbar_show_visibility = 1
 let g:tagbar_show_linenumbers = 1
+
+let g:phpqa_messdetector_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
+let g:phpqa_codesniffer_args = "--standard=PSR2"
 
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
@@ -96,8 +101,6 @@ nmap <leader>fm :SyntasticCheck --standard=PSR2 --colors -n phpcs<cr>
 
 "Save file
 nnoremap <Leader>s :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>qa :qa<CR>
 
 "highlight last inserted text
 nnoremap gV `[v`]
