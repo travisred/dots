@@ -6,4 +6,4 @@ screencapture -i $d.png;
 open $d.png #edit?
 read go;
 rsync $d.png $host:~/public_html/_media/; echo "http://$host/_media/$d.png" | pbcopy
-mv $d.png ~/Downloads
+mv $d.png ~/sites/_media/

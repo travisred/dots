@@ -38,13 +38,13 @@ foreach ($mp3s as $mp3) {
     $command = "id3tag -t $track \"$mp3\"";
     $output = shell_exec($command);
 
-    $command = "id3tag -s '$title' \"$mp3\" 2>&1";
+    $command = "id3tag -s \"$title\" \"$mp3\" 2>&1";
     $output = shell_exec($command);
 
-    $command = "id3tag -A '$album' \"$mp3\" 2>&1";
+    $command = "id3tag -A \"$album\" \"$mp3\" 2>&1";
     $output = shell_exec($command);
 
-    $command = "id3tag -a '$artist' \"$mp3\" 2>&1";
+    $command = "id3tag -a \"$artist\" \"$mp3\" 2>&1";
     $output = shell_exec($command);
 
     print "New id3tags:\n";
