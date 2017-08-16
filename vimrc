@@ -1,4 +1,4 @@
-colorscheme atom-dark-256
+colorscheme monokai
 set backspace=indent,eol,start
 set backup                     " make backups
 set backupdir=/tmp			   " backups go here
