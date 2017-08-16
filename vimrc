@@ -39,13 +39,14 @@ call vundle#end()
 filetype plugin indent on     " required!
 syntax on
 
+set omnifunc=syntaxcomplete#Complete
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 map <Space> <leader>
 let g:syntastic_php_checkers = ['php']
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:35,results:35'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 'r'
 
