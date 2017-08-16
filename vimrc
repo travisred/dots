@@ -33,7 +33,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'ciaranm/detectindent'
 Plugin 'rking/ag.vim'
 Plugin 'bitc/vim-bad-whitespace'
-Plugin 'majutsushi/tagbar'
 Plugin 'joonty/vim-phpqa'
 call vundle#end()
 filetype plugin indent on     " required!
@@ -58,10 +57,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-autocmd VimEnter * nested :call tagbar#autoopen(1)
-let g:tagbar_show_visibility = 1
-let g:tagbar_show_linenumbers = 1
 
 let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
@@ -92,9 +87,6 @@ nnoremap <Leader>6 6gt
 " Make sure [j,k] brings us to expected line
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-
-nmap <leader>n :NERDTreeToggle<cr>
-nmap <leader>f :tag<space>
 
 "Remove bad whitespace
 nmap <leader>bw :EraseBadWhitespace<cr>
