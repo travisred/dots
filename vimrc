@@ -3,7 +3,6 @@ set backspace=indent,eol,start
 set backup                     " make backups
 set backupdir=/tmp			   " backups go here
 set bs=indent,eol,start
-set cursorline             " Find the current line quickly.
 set hlsearch
 set incsearch
 set lazyredraw
@@ -114,6 +113,10 @@ hi vertsplit ctermbg=bg ctermfg=bg
 
 "Automatically remove trailing whitespace
 "autocmd BufWritePre * %s/\s\+$//e
+
+"change line hightlight depending on mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 "Automatically source the Vimrc file on save.
 augroup autosourcing
