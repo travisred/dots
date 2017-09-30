@@ -35,5 +35,8 @@
     "tabstospaces": true,
     "termtitle": false,
     "trimdiff": false,
-    "useprimary": true
+    "useprimary": true,
+    "*.php": {
+        "commenttype": "// %s"
+    }
 }

@@ -119,3 +119,5 @@ vim()
     command vim "$@"
     stty "$STTYOPTS"
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
