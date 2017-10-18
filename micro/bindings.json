@@ -1,6 +1,0 @@
-{
-    "CtrlH": "PreviousTab",
-    "CtrlL": "NextTab",
-    "CtrlP": "fzf.fzf",
-    "Altc": "comment.comment"
-}
