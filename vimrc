@@ -33,6 +33,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'ciaranm/detectindent'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'joonty/vim-phpqa'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
 filetype plugin indent on     " required!
 syntax on
@@ -94,6 +95,11 @@ nnoremap <Leader>s :w<CR>
 "highlight last inserted text
 " open Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
+
+"Search word under cursor
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+"Open file under cursor in new tab
+map <F5> <c-w>gF
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg

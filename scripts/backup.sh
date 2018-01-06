@@ -12,6 +12,6 @@ rsync \
 	--exclude='*.iso*' \
 	--exclude='VirtualBox*' \
 	--exclude='ubuntu-ahm' \
-    --bwlimit=200 \
-~/ 192.168.2.2:~/backup/;
+~/ pi:~/backup/;
+#    --bwlimit=200 \
 exit
