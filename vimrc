@@ -34,6 +34,7 @@ Plugin 'ciaranm/detectindent'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'joonty/vim-phpqa'
 Plugin 'vimwiki/vimwiki'
+Plugin 'rking/ag.vim'
 call vundle#end()
 filetype plugin indent on     " required!
 syntax on
@@ -86,6 +87,7 @@ nnoremap <Leader>6 6gt
 
 "Remove bad whitespace
 nmap <leader>bw :EraseBadWhitespace<cr>
+autocmd BufWritePre * :EraseBadWhitespace
 
 nmap <leader>fm :SyntasticCheck --standard=PSR2 --colors -n phpcs<cr>
 
@@ -96,10 +98,23 @@ nnoremap <Leader>s :w<CR>
 " open Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
 
-"Search word under cursor
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-"Open file under cursor in new tab
-map <F5> <c-w>gF
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+"nnoremap <leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap <leader>g :Ag "\b<C-R><C-W>\b"<cr>
+nnoremap <leader>f <c-w>gF
+
+iabbrev lo \Log::info(json_encode());
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg

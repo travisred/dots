@@ -50,8 +50,11 @@ foreach ($mp3s as $mp3) {
     $command = "id3tag -a \"$artist\" \"$mp3\" 2>&1";
     $output = shell_exec($command);
 
-    $command = 'python ~/dots/scripts/id3artwork.py "' . $mp3 . '" albumart.jpg';
-    $output = shell_exec($command);
+    $art = glob('*jpg');
+    if (! empty($art)) {
+        $command = 'python ~/dots/scripts/id3artwork.py "' . $mp3 . '" albumart.jpg';
+        $output = shell_exec($command);
+    }
 
     print "New id3tags:\n";
     $output = shell_exec('id3info "' . $mp3 . '"');

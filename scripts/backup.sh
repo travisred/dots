@@ -5,13 +5,12 @@ rsync \
 	--progress \
 	--delete \
 	--delete-excluded \
-	--backup-dir=~/old/ \
+	--backup-dir=/Volumes/treddell2/old/ \
 	--suffix=_`date +%Y_%m_%d_%H%M%S` \
 	--exclude='Library' \
 	--exclude='.*' \
 	--exclude='*.iso*' \
 	--exclude='VirtualBox*' \
 	--exclude='ubuntu-ahm' \
-~/ pi:~/backup/;
-#    --bwlimit=200 \
+~/ /Volumes/treddell2/backup/;
 exit

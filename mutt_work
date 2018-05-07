@@ -11,7 +11,7 @@ macro index S "<tag-prefix-cond><save-message>~/Documents/work_archives/ahm_2018
 
 macro index R "<shell-escape>getmail -r ahm<enter>" "Get new email"
 
-macro index .fg '<tag-pattern>~f ci<enter><tag-pattern>~f loggly<enter><tag-pattern>~f relic<enter>' "clean up noise"
+macro index .fg '<tag-pattern>~f ci<enter><tag-pattern>~f loggly<enter><tag-pattern>~f relic<enter><tag-pattern>~f pingdom<enter><tag-pattern>cronFindMemberEmailDuplicates<enter><tag-pattern>crons did not run on<enter><tag-pattern>MailChimp<enter>' "clean up noise"
 
 macro index "\ea" "<change-folder>=work_archives/ahm_<tab><tab>" "Show Archives"
 
