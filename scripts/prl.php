@@ -1,4 +1,4 @@
-#! /usr/local/php
+#! /usr/local/bin/php
 
 <?php
 # usage: php prl.php dev-billing
