@@ -77,6 +77,10 @@ nmap <Leader>h :nohlsearch<cr>
 nmap  <C-l> :tabn<cr>
 nmap  <C-h> :tabp<cr>
 
+"Spellcheck
+nmap <Leader>sp :set spell spelllang=en_us<cr>
+nmap <Leader>ns :set nospell<cr>
+
 "Tab movement with CTRL
 nnoremap <Leader>1 1gt
 nnoremap <Leader>2 2gt
