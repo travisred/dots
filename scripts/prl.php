@@ -15,4 +15,4 @@ $url = str_replace('.git', '', $url[1]);
 $branch = exec('git status', $gsOutput);
 $branch = str_replace('On branch ', '', $gsOutput[0]);
 
-echo 'https://github.com/' . $url . '/compare/' . $parentBranch . '...' . $branch . '?expand=1';
+echo 'https://github.com/' . $url . '/compare/' . $parentBranch . '...' . $branch . '?expand=1' . "\n";

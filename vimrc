@@ -66,6 +66,7 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 "-------------Mappings--------------"
 "Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabe $MYVIMRC<cr>
+nmap <Leader>q :q!<cr>
 
 "Some gittiness
 nmap <Leader>gb :Gblame<cr>
