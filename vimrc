@@ -14,6 +14,8 @@ set smartcase
 set t_Co=256
 set tabstop=4 shiftwidth=4 expandtab
 set wildmenu
+" Open in buffer in new tab (e.g. opening file from QuickFix window)
+set switchbuf+=usetab,newtab
 
 filetype off
 
@@ -23,7 +25,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
@@ -33,8 +35,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'ciaranm/detectindent'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'joonty/vim-phpqa'
-Plugin 'vimwiki/vimwiki'
-Plugin 'rking/ag.vim'
 call vundle#end()
 filetype plugin indent on     " required!
 syntax on
@@ -100,7 +100,7 @@ nnoremap <Leader>s :w<CR>
 
 "highlight last inserted text
 " open Tagbar
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>T :TagbarToggle<CR>
 
 " The Silver Searcher
 if executable('ag')
@@ -114,8 +114,8 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-"nnoremap <leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <leader>g :Ag "\b<C-R><C-W>\b"<cr>
+nnoremap <leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap <leader>t <c-w>gf
 nnoremap <leader>f <c-w>gF
 
 iabbrev lo \Log::info(json_encode());
