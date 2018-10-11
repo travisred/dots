@@ -56,8 +56,8 @@ macro pager o "v/html<enter>mq" "view message in browser (from pager)"
 macro pager w "<enter-command>set invsmart_wrap invmarkers<enter>" "remove linewrap stuff"
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
-macro index .cp '<enter-command>source ~/.mutt_personal<enter><change-folder>=<enter>' "switch to personal email"
-macro index .cw '<enter-command>source ~/.mutt_work<enter><change-folder>=<enter>' "switch to work email"
+macro index P '<enter-command>source ~/.mutt_personal<enter><change-folder>=<enter>' "switch to personal email"
+macro index W '<enter-command>source ~/.mutt_work<enter><change-folder>=<enter>' "switch to work email"
 macro index o "<enter>v/html<enter>mqq" "view message in browser (from index)"
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
