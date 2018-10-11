@@ -3,14 +3,14 @@
 filename=`date +%Y%m%d%I%M%S`;
 filename+='_';
 filename+=`openssl rand -hex 16`;
-file_name+='.png';
+filename+='.png';
 host="magnatecha.com";
 
 screencapture -i $filename;
 open $filename; #edit?
 read go;
 
-rsync --progress $filename $host:~/public_html/_media/;
+rsync $filename $host:~/public_html/_media/;
 echo "http://$host/_media/$filename" | pbcopy;
 
 mv $filename ~/sites/_media/;
