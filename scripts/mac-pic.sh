@@ -7,6 +7,7 @@ filename+='.png';
 host="magnatecha.com";
 
 screencapture -i $filename;
+printf "\nHit enter when you are done editing image in Preview. Don't forget to save it first (cmd+s).\n";
 open $filename; #edit?
 read go;
 
