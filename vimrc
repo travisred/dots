@@ -17,6 +17,10 @@ set wildmenu
 " Open in buffer in new tab (e.g. opening file from QuickFix window)
 set switchbuf+=usetab,newtab
 
+" Infinite undo
+set undofile
+set undodir=~/.vim/undodir
+
 filetype off
 
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -25,7 +29,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'shawncplus/phpcomplete.vim'
-"Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
@@ -35,6 +38,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'ciaranm/detectindent'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'joonty/vim-phpqa'
+Plugin 'rking/ag.vim'
 call vundle#end()
 filetype plugin indent on     " required!
 syntax on
@@ -82,14 +86,6 @@ nmap  <C-h> :tabp<cr>
 nmap <Leader>sp :set spell spelllang=en_us<cr>
 nmap <Leader>ns :set nospell<cr>
 
-"Tab movement with CTRL
-nnoremap <Leader>1 1gt
-nnoremap <Leader>2 2gt
-nnoremap <Leader>3 3gt
-nnoremap <Leader>4 4gt
-nnoremap <Leader>5 5gt
-nnoremap <Leader>6 6gt
-
 "Remove bad whitespace
 nmap <leader>bw :EraseBadWhitespace<cr>
 autocmd BufWritePre * :EraseBadWhitespace
@@ -115,11 +111,13 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-nnoremap <leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <leader>t <c-w>gf
-nnoremap <leader>f <c-w>gF
+"Use <space>g to find occurrences
+"Hit enter on line in quickfix list to go to occurrence in new tab
+nnoremap <leader>g :Ag --ignore-dir=tmp --ignore-dir=webroot/coverage "\b<C-R><C-W>\b"<CR>:cw<CR>
+set switchbuf+=usetab,newtab "new tab for buffer, or re-use if already open
 
-iabbrev lo \Log::info(json_encode());
+iabbrev lo \Log::info('TRR - ' . json_encode());
+iabbrev clo CakeLog::write('debug', 'TRR - ' . json_encode());
 
 "-------------Visual---------------------"
 hi LineNr ctermbg=bg
