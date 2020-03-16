@@ -7,7 +7,7 @@ audio = MP3(mp3file, ID3=ID3)
 try:
    audio.add_tags()
 except error:
-   pass
+   print error
 
 audio.tags.add(
    APIC(

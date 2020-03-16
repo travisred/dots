@@ -30,11 +30,12 @@ alias 1='cd ../'
 alias 2='cd ../../'
 alias 3='cd ../../../'
 alias _=sudo
+alias e=vim
 
 alias exmon='xrandr --output DP2 --mode 1920x1080; sleep 2; xrandr --output eDP1 --off'
 alias lapmon='xrandr --output eDP1 --mode 1920x1080; sleep 2; xrandr --output DP2 --off'
 
-alias sublime='~/bin/sublime/sublime_text'
+alias sublime='open -a /Applications/Sublime\ Text.app'
 
 running() {
     ps -Alf | grep -v grep | grep $1
@@ -61,3 +62,16 @@ grr() {
 }
 
 alias slowcurl='curl --limit-rate 200k'
+
+
+cdf () {
+target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+if [ "$target" != "" ]
+then
+	cd "$target"
+	pwd
+else
+	echo 'No Finder window found' >&2
+fi
+}
+alias activate=". ./bin/activate"

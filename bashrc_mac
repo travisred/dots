@@ -121,3 +121,10 @@ vim()
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias php='/usr/local/Cellar/php@7.2/7.2.13/bin/php'
+
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}

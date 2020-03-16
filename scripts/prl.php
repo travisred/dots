@@ -7,7 +7,9 @@
 $output = [];
 $parentBranch = $argv[1];
 
-exec('git config --get remote.origin.url', $output);
+$repo = exec('pwd');
+
+exec('cd ' . $repo . '; git config --get remote.origin.url', $output);
 
 $url = explode(':', $output[0]);
 $url = str_replace('.git', '', $url[1]);

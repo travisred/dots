@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-\Log::info('$TM_FILENAME: $TM_LINE_NUMBER ' . ${1});
+\Log::info('$TM_FILENAME: $TM_LINE_NUMBER ' . json_encode(${1}));
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>log</tabTrigger>
