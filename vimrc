@@ -6,6 +6,7 @@ set bs=indent,eol,start
 set hlsearch
 set incsearch
 set lazyredraw
+set redrawtime=10000
 set list
 set listchars=tab:>-
 set nocompatible
