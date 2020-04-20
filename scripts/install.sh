@@ -19,5 +19,6 @@ ln -s /home/treddell/Documents/getmail /home/treddell/.getmail
 
 git config --global user.email "tjreddell@gmail.com"
 git config --global user.name "Travis Reddell"
+git config --global core.editor "vim"
 
 exit
