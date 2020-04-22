@@ -11,8 +11,9 @@ esac
 
 if [ "$(uname)" == "Linux" ]
 then
-    echo "sudo apt install vim git keepassx dmenu getmail4 mutt"
-    sudo apt install vim git keepassx dmenu getmail4 mutt
+    programs="vim git keepassx dmenu getmail4 mutt ffmpeg fzf"
+    echo "installing $programs"
+    sudo apt install $programs
 fi
 
 mv ~/.bash_aliases ~/.bash_aliases.orig
