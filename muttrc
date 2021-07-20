@@ -1,8 +1,8 @@
 ## Common Settings ##
 
-set folder = ~/Documents/email/mail/
-set spoolfile = ~/Documents/email/mail/
-source ~/.mutt_personal
+set folder = ~/Documents/email/ahm
+set spoolfile = ~/Documents/email/ahm/
+source ~/.mutt_work
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d/%Y %I:%M%p"

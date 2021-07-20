@@ -1,8 +1,0 @@
-## Personal Email ##
-unset folder
-set folder = ~/Documents/email/mail
-set record = ~/Documents/email/mail
-macro index S "<tag-prefix-cond><save-message>~/Documents/archives/2020\n<sync-mailbox>"
-macro index R "<shell-escape>getmail -r gmail<enter>" "Get new email"
-macro index "\ea" "<change-folder>=archives/<tab><tab>" "Show Archives"
-

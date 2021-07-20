@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-CakeLog::write('error', '$TM_FILENAME: $TM_LINE_NUMBER ' . json_encode(${1}));
+CakeLog::write('error', 'TJR $TM_FILENAME: $TM_LINE_NUMBER ' . json_encode(${1}));
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>cakelog</tabTrigger>

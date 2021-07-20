@@ -1,4 +1,3 @@
-colorscheme monokai
 set backspace=indent,eol,start
 set backup                     " make backups
 set backupdir=/tmp             " backups go here
@@ -86,6 +85,9 @@ nmap  <C-p> :FZF<cr>
 "Remove bad whitespace
 autocmd BufWritePre * :EraseBadWhitespace
 
+"Count matches
+map ,* *<C-O>:%s///gn<CR>
+
 "Save file
 nnoremap <leader>s :w<CR>
 nnoremap <C-s> :w<CR>
@@ -98,7 +100,7 @@ nnoremap <leader>T :TagbarToggle<CR>
 nnoremap <leader>rm :call delete(expand('%'))<CR>
 
 " Date
-:nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>PA:
+nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>PA:
 
 "Use <space>g to find occurrences
 "Hit enter on line in quickfix list to go to occurrence in new tab
@@ -114,10 +116,7 @@ com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom
 vmap <leader>cc <Plug>NERDCommenterToggle
 
 "-------------Visual---------------------"
-hi LineNr ctermbg=bg
 set foldcolumn=2
-hi foldcolumn ctermbg=bg
-hi vertsplit ctermbg=bg ctermfg=bg
 
 "-------------Auto-Commands--------------"
 
